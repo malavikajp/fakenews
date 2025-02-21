@@ -8,8 +8,8 @@ CORS(app, resources={r"/predict": {"origins": "*"}})  # ✅ Allow all origins fo
 
 # Load Model and Vectorizer
 try:
-    model = joblib.load("model.pkl")
-    vectorizer = joblib.load("vectorizer.pkl")
+    model = joblib.load("backend/model.pkl")
+    vectorizer = joblib.load("backend/vectorizer.pkl")
 except FileNotFoundError:
     print("Error: Model or Vectorizer file not found! Make sure 'model.pkl' and 'vectorizer.pkl' exist.")
 

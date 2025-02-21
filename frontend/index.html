@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>📰 Fake News Detection</h1>
+        
+        <p class="instruction">Paste the news text below to check if it's <b>Real</b> or <b>Fake</b>!</p>
+
+        <!-- Text Area for Input -->
+        <textarea id="newsInput" placeholder="Enter news text here..."></textarea>
+        <div class="tooltip">📝 Type or paste the news text you want to analyze.</div>
+
+        <!-- Analyze Button -->
+        <button onclick="checkNews()">🔍 Check News</button>
+
+        <!-- Progress Bar (Hidden by Default) -->
+        <div class="progress-container" id="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <!-- Loading Animation (Hidden by Default) -->
+        <div id="loading" class="loading" style="display: none;">⏳ Analyzing...</div>
+
+        <!-- Output Display -->
+        <div id="result">
+            <p id="prediction"></p>
+            <p id="confidence"></p>
+        </div>
+
+        <!-- Error Message (if any) -->
+        <div id="error-message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

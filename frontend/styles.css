@@ -1,0 +1,187 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0b0e29, #9e58ff); /* Gradient background */
+    color: #333;
+    text-align: center;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container with soft shadow and rounded corners */
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 700px;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Subtle hover effect */
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 2.5em;
+    color: #1e4573; /* Blue color for heading */
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Subheading or Instructions */
+p.instruction {
+    font-size: 1.1em;
+    color: #24504c; /* Green for instructions */
+    margin-bottom: 20px;
+}
+
+/* Textarea Styling */
+textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    border: 2px solid #4CAF50; /* Green border */
+    border-radius: 10px;
+    background-color: #f7f8fa;
+    resize: vertical;
+    min-height: 150px;
+    margin-bottom: 20px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea:focus {
+    border-color: #0078D4; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 120, 212, 0.5); /* Soft blue shadow */
+}
+
+/* Tooltip Styling */
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 0.9em;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+textarea:hover + .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Button Styling */
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #FF6F61; /* Soft coral color */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #e55c4e; /* Darker coral on hover */
+}
+
+button:active {
+    background-color: #d14f40; /* Even darker coral on click */
+    transform: translateY(2px); /* Button presses down */
+}
+
+/* Result Section */
+#result {
+    margin-top: 30px;
+    font-size: larger;
+    font-weight: 400;
+
+}
+
+#prediction {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #4CAF50; /* Green for real prediction */
+    margin-bottom: 10px;
+}
+
+#confidence {
+    font-size: 1.2em;
+    color: #FF8C00; /* Orange for confidence score */
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: none;
+}
+
+.progress-bar {
+    width: 0;
+    height: 10px;
+    background-color: #4CAF50;
+    border-radius: 10px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Error Message */
+#error-message {
+    color: red;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Loading Animation */
+.loading {
+    font-size: 1.2em;
+    color: #f4a261; /* Warm color */
+    font-weight: bold;
+    margin-top: 20px;
+    animation: pulse 1s infinite; /* Pulse animation */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    textarea {
+        font-size: 1em;
+    }
+}

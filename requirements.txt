@@ -1,0 +1,8 @@
+Flask
+gunicorn
+Flask-CORS
+joblib
+sklearn
+pandas
+numpy
+nltk

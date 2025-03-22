@@ -18,7 +18,7 @@ This project implements a **user-friendly web interface** that allows users to *
 - **Machine Learning**: Scikit-learn (Naive Bayes classifier)  
 - **Text Processing**: NLTK for text preprocessing  
 - **Web Scraping**: Beautiful Soup, Requests libraries  
-- **Deployment**: *[Specify your deployment platform, e.g., Heroku, AWS, Render]*  
+
 
 ## 📊 **Dataset**
 The model was trained on the **Kaggle Fake and Real News Dataset**, which contains approximately **40,000 labeled news articles** from various sources. The dataset includes:  

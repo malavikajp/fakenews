@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection - Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #58457f, #250d39);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+        }
+        h2 {
+            color: yellow;
+        }
+        .news-content {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .result-box {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .real {
+            background-color: green;
+            color: white;
+        }
+        .fake {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Fake News Detection Result</h1>
+        <h2>Analyzed News Content</h2>
+        <div class="news-content" id="newsText"></div>
+
+        <h2>Prediction</h2>
+        <div id="result" class="result-box"></div>
+
+        
+
+        <br>
+        <button onclick="goBack()">🔙 Go Back</button>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                text: params.get("text") || "No news content found",
+                prediction: params.get("prediction") || "Unknown",
+                
+            };
+        }
+
+        function displayResult() {
+            const { text, prediction, confidence } = getQueryParams();
+            document.getElementById("newsText").innerText = text;
+            document.getElementById("result").innerText = `The news is ${prediction}`;
+            
+            if (prediction.toLowerCase() === "real") {
+                document.getElementById("result").classList.add("real");
+            } else if (prediction.toLowerCase() === "fake") {
+                document.getElementById("result").classList.add("fake");
+            }
+        }
+
+        function goBack() {
+            window.location.href = "index.html";
+        }
+
+        displayResult();
+    </script>
+
+</body>
+</html>

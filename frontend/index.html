@@ -11,7 +11,13 @@
     <div class="container">
         <h1>📰 Fake News Detection</h1>
         
-        <p class="instruction">Paste the news text below to check if it's <b>Real</b> or <b>Fake</b>!</p>
+        <p class="instruction">Paste the news text below or enter a news article URL to check if it's <b>Real</b> or <b>Fake</b>!</p>
+
+        <!-- URL Input Field -->
+        <input type="text" id="news-url" placeholder="Enter news article URL">
+        <button onclick="fetchNewsAndPredict()">🌐 Fetch & Analyze</button>
+
+        <p class="or-text">OR</p>
 
         <!-- Text Area for Input -->
         <textarea id="newsInput" placeholder="Enter news text here..."></textarea>
@@ -30,10 +36,10 @@
 
         <!-- Output Display -->
         <div id="result">
+            <p id="headline"></p>
             <p id="prediction"></p>
             <p id="confidence"></p>
         </div>
-
         <!-- Error Message (if any) -->
         <div id="error-message"></div>
     </div>

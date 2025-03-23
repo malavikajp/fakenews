@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fake News Detection</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
 
     <div class="container">
         <h1>📰 Fake News Detection</h1>
         
-        <p class="instruction">Paste the news text below or enter a news article URL to check if it's <b>Real</b> or <b>Fake</b>!</p>
+        <p class="instruction" >Paste the news text below or enter a news article URL to check if it's <b>Real</b> or <b>Fake</b>!</p>
 
         <!-- URL Input Field -->
         <input type="text" id="news-url" placeholder="Enter news article URL">
-        <button onclick="fetchNewsAndPredict()">🌐 Fetch & Analyze</button>
+        <button id = "b"onclick="hide()">🌐 Fetch & Analyze</button>
 
-        <p class="or-text">OR</p>
+        <p class="or-text hideclick">OR</p>
 
         <!-- Text Area for Input -->
-        <textarea id="newsInput" placeholder="Enter news text here..."></textarea>
-        <div class="tooltip">📝 Type or paste the news text you want to analyze.</div>
+        <textarea  class ="hideclick"id="newsInput" placeholder="Enter news text here..."></textarea>
+        <div class="tooltip hideclick">📝 Type or paste the news text you want to analyze.</div>
 
         <!-- Analyze Button -->
-        <button onclick="checkNews()">🔍 Check News</button>
+        <button class ="hideclick" onclick="checkNews()">🔍 Check News</button>
 
         <!-- Progress Bar (Hidden by Default) -->
         <div class="progress-container" id="progress-container">
@@ -44,6 +45,5 @@
         <div id="error-message"></div>
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
